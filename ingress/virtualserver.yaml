@@ -20,34 +20,29 @@ spec:
     redirect:
       enable: true
   upstreams:
-    - name: arcadia-users
-      service: arcadia-users
+    - name: arcadia-mainapp
+      service: arcadia-mainapp
       port: 80
-    - name: arcadia-login
-      service: arcadia-login
+    - name: arcadia-backend
+      service: arcadia-backend
       port: 80
-    - name: arcadia-stocks
-      service: arcadia-stocks
+    - name: arcadia-app2
+      service: arcadia-app2
       port: 80
-    - name: arcadia-stock-transaction
-      service: arcadia-stock-transaction
-      port: 80
-    - name: arcadia-frontend
-      service: arcadia-frontend
+    - name: arcadia-app3
+      service: arcadia-app3
       port: 80
   routes:
     - path: /v1/user
       action:
-        pass: arcadia-users
+        pass: arcadia-mainapp
     - path: /v1/login
       action:
-        pass: arcadia-login
+        pass: arcadia-backend
     - path: /v1/stock
       action:
-        pass: arcadia-stocks
+        pass: arcadia-app2
     - path: /v1/stockt
       action:
-        pass: arcadia-stock-transaction
-    - path: /
-      action:
-        pass: arcadia-frontend
+        pass: arcadia-app3
+
