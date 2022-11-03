@@ -39,7 +39,7 @@ spec:
     - path: /files
       action:
         pass: arcadia-backend
-    - path: /app2
+    - path: /api
       action:
         pass: arcadia-app2
     - path: /app3
