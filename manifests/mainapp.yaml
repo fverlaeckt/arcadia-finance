@@ -15,8 +15,8 @@ spec:
         app: arcadia-mainapp
     spec:
       containers:
-        - name: arcadia-login
-          image: arcadia-application/main-app/mainapp
+        - name: arcadia-mainapp
+          image: https://registry.gitlab.com/arcadia-application/main-app/mainapp:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 80
