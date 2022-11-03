@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: arcadia-backend
-          image: registry.gitlab.com/arcadia-application/back-end/backend
+          image: registry.gitlab.com/arcadia-application/back-end/backend:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 80
