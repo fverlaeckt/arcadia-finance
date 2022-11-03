@@ -1,0 +1,37 @@
+
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: arcadia-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: arcadia-backend
+  template:
+    metadata:
+      labels:
+        app: arcadia-backend
+    spec:
+      containers:
+        - name: arcadia-backend
+          image: registry.gitlab.com/arcadia-application/back-end/backend:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: arcadia-backend
+spec:
+  ports:
+    - port: 80
+      targetPort: 80
+      protocol: TCP
+      name: http
+  selector:
+    app: arcadia-backend
