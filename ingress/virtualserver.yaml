@@ -33,16 +33,16 @@ spec:
       service: arcadia-app3
       port: 80
   routes:
-    - path: /v1/user
+    - path: /
       action:
         pass: arcadia-mainapp
-    - path: /v1/login
+    - path: /files
       action:
         pass: arcadia-backend
-    - path: /v1/stock
+    - path: /app2
       action:
         pass: arcadia-app2
-    - path: /v1/stockt
+    - path: /app3
       action:
         pass: arcadia-app3
 
